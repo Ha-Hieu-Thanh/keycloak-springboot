@@ -14,6 +14,7 @@ public class CorsConfig {
 
     @Bean
     public CorsFilter corsFilter(@Value("${app.cors.allowed-origins}") List<String> allowedOrigins) {
+        allowedOrigins.add("http://localhost:5174");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
